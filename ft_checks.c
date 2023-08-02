@@ -6,35 +6,13 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:42:46 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/07/28 21:38:09 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/08/02 17:24:11 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-// int	ft_strstr(const char *str, const char *find)
-// {
-// 	int	i;
-// 	int	b;
-
-// 	i = 0;
-// 	b = 0;
-// 	if (*find == 0)
-// 		return (-1);
-// 	while (str[i])
-// 	{
-// 		b = 0;
-// 		while (str[i + b] == find[b] && str[i + b] && find[b])
-// 		{
-// 			b++;
-// 			if (!find[b] && !str[i + b])
-// 				return (0);
-// 		}
-// 		i++;
-// 	}
-// 	return (-1);
-// }
-
+// compares strings, returns 0 if identical, and a value != 0 when different
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	int	i;
@@ -70,14 +48,14 @@ int	check_rp(char **av)
 //checks for errors on input
 int	checker_errors(char **av)
 {
-	int	i;
-	int	b;
+	long	i;
+	long	b;
 
 	i = 1;
 	b = 0;
 	while (av[i])
 	{
-		if (((av[i][b] <= 48 || av[i][b] >= 57) && av[i][b]) || check_rp(av))
+		if (((av[i][b] < 48 || av[i][b] > 57) && av[i][b]) || check_rp(av))
 		{
 			printf("Error\n");
 			return (-1);
@@ -88,6 +66,14 @@ int	checker_errors(char **av)
 		{
 			i++;
 			b = 0;
+		}
+		if (av[i])
+		{
+			if (mini_atoi(av[i]) > 2147483647 || mini_atoi(av[i]) < -2147483648)
+			{
+				printf("Error\n");
+				return (-1);
+			}
 		}
 	}
 	return (0);

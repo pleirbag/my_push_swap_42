@@ -6,21 +6,13 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:42:51 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/07/28 20:14:05 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/08/02 17:15:18 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	ft_swap(int *a, int *b)
-{
-	int	temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
-}
-
+// writes the output operation to be realized
 void	ft_write_operations(char op, char id)
 {
 	if (id)
@@ -40,11 +32,12 @@ void	ft_write_operations(char op, char id)
 	}
 }
 
-int	mini_atoi(char *str)
+// Similar to atoi returns an long from a string
+long	mini_atoi(char *str)
 {
-	int	i;
-	int	pos;
-	int	nbr;
+	long	i;
+	long	pos;
+	long	nbr;
 
 	i = 0;
 	pos = 1;
@@ -62,4 +55,22 @@ int	mini_atoi(char *str)
 		i++;
 	}
 	return (pos * nbr);
+}
+
+// debugging function used to print current state of a stack
+void	print_stack(t_node *stack)
+{
+	while (stack)
+	{
+		printf("%d\n", stack->value);
+		stack = stack->next;
+	}
+}
+
+// Runs thru the list returning last node
+t_node	*list_iter(t_node *stack)
+{
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
