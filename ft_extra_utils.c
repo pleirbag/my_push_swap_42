@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 18:09:46 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/12 19:55:24 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/08/12 20:48:51 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,14 +76,14 @@ void	ft_direction_rotate(t_node **stack, int id, int element, int size)
 {
 	if (element == 'm')
 	{
-		if (mid_point(*stack, smallest_element(*stack)) > size / 2)
+		if (mid_point(*stack, smallest_element(stack)) > size / 2)
 			ft_rotate(stack, id);
 		else
 			ft_reverse(stack, id);
 	}
 	if (element == 'M')
 	{
-		if (mid_point(*stack, biggest_element(*stack)) < size / 2)
+		if (mid_point(*stack, biggest_element(stack)) < size / 2)
 			ft_rotate(stack, id);
 		else
 			ft_reverse(stack, id);
