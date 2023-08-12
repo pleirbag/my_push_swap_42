@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:42:46 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/02 17:24:11 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/08/12 18:29:06 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,19 @@ int	checker_errors(char **av)
 				return (-1);
 			}
 		}
+	}
+	return (0);
+}
+
+//checks if the list is in order
+int	ft_is_order(t_node *stack_a)
+{
+	while (stack_a->next)
+	{
+		if (stack_a->value < stack_a->next->value)
+			stack_a = stack_a->next;
+		else
+			return (-1);
 	}
 	return (0);
 }

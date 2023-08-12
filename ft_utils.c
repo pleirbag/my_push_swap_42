@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:42:51 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/02 17:15:18 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/08/11 16:40:13 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,18 @@ t_node	*list_iter(t_node *stack)
 	while (stack->next)
 		stack = stack->next;
 	return (stack);
+}
+
+// returns teh size of the list
+int	ft_lstsize(t_node *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
 }
