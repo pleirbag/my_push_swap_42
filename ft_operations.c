@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:50:32 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/12 18:21:51 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/08/12 21:52:17 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	ft_push(t_node **stack, t_node **stack_2, char id)
 	t_node	*temp;
 
 	if (!stack)
+		return ;
+	if (!stack_2)
 		return ;
 	temp = (*stack_2);
 	(*stack_2) = *stack;
