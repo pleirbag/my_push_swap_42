@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:42:46 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/12 18:29:06 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/08/19 21:43:49 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int	ft_strcmp(const char *s1, const char *s2)
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+
+// Checks if the string is a valid number, or + - sign
+// int	ft_check_nbr(void)
 
 // checks for repeats in the input
 int	check_rp(char **av)
@@ -56,10 +59,7 @@ int	checker_errors(char **av)
 	while (av[i])
 	{
 		if (((av[i][b] < 48 || av[i][b] > 57) && av[i][b]) || check_rp(av))
-		{
-			printf("Error\n");
 			return (-1);
-		}
 		if (av[i][b])
 			b++;
 		if (!av[i][b])
@@ -70,10 +70,7 @@ int	checker_errors(char **av)
 		if (av[i])
 		{
 			if (mini_atoi(av[i]) > 2147483647 || mini_atoi(av[i]) < -2147483648)
-			{
-				printf("Error\n");
 				return (-1);
-			}
 		}
 	}
 	return (0);

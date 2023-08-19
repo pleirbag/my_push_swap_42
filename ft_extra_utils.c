@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 18:09:46 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/14 23:00:21 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/08/18 16:40:32 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ t_node	*lst_clear(t_node **stack)
 //Rotates list in the most efficient direction
 void	ft_direction_rotate(t_node **stack, int id, int element, int size)
 {
-	int i;
+	int	i;
 
 	if (element == 'm')
 	{
@@ -86,8 +86,8 @@ void	ft_direction_rotate(t_node **stack, int id, int element, int size)
 	}
 	if (element == 'M')
 	{
-		i = mid_point(*stack, biggest_element(stack));
-		if (i < size / 2 && i > 1)
+		i = mid_point(*stack, big_elmnt(stack));
+		if (i < size / 2)
 			ft_rotate(stack, id);
 		else
 			ft_reverse(stack, id);

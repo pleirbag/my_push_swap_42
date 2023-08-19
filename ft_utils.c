@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:42:51 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/11 16:40:13 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/08/18 16:39:53 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ long	mini_atoi(char *str)
 	i = 0;
 	pos = 1;
 	nbr = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
 	if ((str[i] == '-' || str[i] == '+' ))
 	{
 		if (str[i] == '-')
@@ -68,15 +70,15 @@ void	print_stack(t_node *stack)
 }
 
 // Runs thru the list returning last node
-t_node	*list_iter(t_node *stack)
+t_node	*list_last(t_node *stack)
 {
 	while (stack->next)
 		stack = stack->next;
 	return (stack);
 }
 
-// returns teh size of the list
-int	ft_lstsize(t_node *lst)
+// returns the size of the list
+int	ft_lstsz(t_node *lst)
 {
 	int	i;
 

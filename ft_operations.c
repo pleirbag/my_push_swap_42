@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:50:32 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/12 21:52:17 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/08/16 15:34:31 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_rotate(t_node **stack, char id)
 	if (!stack)
 		return ;
 	temp = *stack;
-	temp2 = list_iter(*stack);
+	temp2 = list_last(*stack);
 	temp2->next = temp;
 	*stack = (*stack)->next;
 	temp->next = NULL;
@@ -69,7 +69,7 @@ void	ft_reverse(t_node **stack, char id)
 	if (!stack)
 		return ;
 	temp2 = *stack;
-	temp = list_iter(*stack);
+	temp = list_last(*stack);
 	while (temp2->next != temp)
 		temp2 = temp2->next;
 	temp->next = (*stack);

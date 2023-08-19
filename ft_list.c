@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 17:22:43 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/02 17:02:07 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/08/18 16:39:46 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,21 @@ t_node	*ft_lstnew(int n)
 	return (n_node);
 }
 
+void	ft_lstadd_back(t_node **lst, t_node *new)
+{
+	t_node	*i;
+
+	i = *lst;
+	if (!*lst)
+		*lst = new;
+	else
+	{
+		while (i->next)
+			i = i->next;
+		i->next = new;
+	}
+}
+
 // creates an linke list with the value of the arguments passed in ARGV in order
 t_node	*lst_mkr(int i, char **av, t_node **stack)
 {
@@ -38,6 +53,19 @@ t_node	*lst_mkr(int i, char **av, t_node **stack)
 		tmp = ft_lstnew(mini_atoi(av[i]));
 		tmp->next = head;
 		head = tmp;
+	}
+	return (head);
+}
+
+t_node	*dupe_list(t_node *stack)
+{
+	t_node	*head;
+
+	head = NULL;
+	while (stack)
+	{
+		ft_lstadd_back(&head, ft_lstnew(stack->value));
+		stack = stack->next;
 	}
 	return (head);
 }
