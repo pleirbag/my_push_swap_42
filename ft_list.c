@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 17:22:43 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/18 16:39:46 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/09/22 22:18:11 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ t_node	*lst_mkr(int i, char **av, t_node **stack)
 
 	*stack = NULL;
 	head = *stack;
+	// printf("\ni == %d\n\n", i);
 	while (--i > 0)
 	{
 		tmp = ft_lstnew(mini_atoi(av[i]));

@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:56:01 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/19 23:12:03 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/09/22 22:49:37 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,14 @@ void	closest_big(t_node **original, int value)
 		r++;
 		stack = stack->next;
 	}
-	lst_clear(&stack);
+	lst_clear(&stack, 0, 0);
 	stack = dupe_list(*original);
 	while (stack->value > value)
 	{
 		ft_reverse(&stack, 0);
 		rr++;
 	}
-	lst_clear(&stack);
+	lst_clear(&stack, 0, 0);
 	if (rr < r)
 	{
 		while (rr--)
@@ -106,14 +106,14 @@ void	closest_big_to_a(t_node **original, int value)
 		r++;
 		stack = stack->next;
 	}
-	lst_clear(&stack);
+	lst_clear(&stack, 0, 0);
 	stack = dupe_list(*original);
 	while (stack->value < value)
 	{
 		ft_reverse(&stack, 0);
 		rr++;
 	}
-	lst_clear(&stack);
+	lst_clear(&stack, 0, 0);
 	if (rr < r)
 	{
 		while (rr--)
@@ -153,4 +153,20 @@ int	nbr_rank(t_node **stack, int nth)
 	return (cv);
 }
 
-//kind of square root minus a few
+//solves for the square root of a number -1
+//in order to determine the size of the blocks used for the sorting algorithm
+int	ft_sqrt(unsigned int n)
+{
+	unsigned int	i;
+
+	i = 1;
+	if (n < 2)
+		return (n);
+	while ((i * i) < n)
+	{
+		i++;
+		if (i >= 46341)
+			return (-1);
+	}
+	return (i - 2);
+}

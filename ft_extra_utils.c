@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 18:09:46 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/18 16:40:32 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/09/22 22:47:55 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,14 @@ void	ft_push_twice(t_node **stack_a, t_node **stack_b, int op)
 }
 
 // clears all the memory allocated for the linked list
-t_node	*lst_clear(t_node **stack)
+t_node	*lst_clear(t_node **stack, char **inputs, int ac)
 {
 	t_node	*temp;
+	int		i;
+	int		x;
 
+	i = 0;
+	x = count_inputs(inputs) + ac;
 	if (!(*stack)->next)
 	{
 		free(*stack);
@@ -68,6 +72,12 @@ t_node	*lst_clear(t_node **stack)
 		free(*stack);
 		*stack = temp;
 	}
+	// if (ac == 2 && 0)
+	// {
+	// 	free(inputs);
+	// 	inputs++;
+	// 	i++;
+	// }
 	return (*stack);
 }
 

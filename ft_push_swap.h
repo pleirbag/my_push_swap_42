@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:50:25 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/19 20:16:23 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/08/29 22:01:28 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ t_node	*list_last(t_node *stack);
 long	mini_atoi(char *str);
 int		ft_lstsz(t_node *lst);
 
-t_node	*lst_clear(t_node **stack_a);
+t_node	*lst_clear(t_node **stack_a, char **inputs, int ac);
+
+char	**ft_split(char const *s);
+int		count_inputs(char **inputs);
 
 //List math, operations to find a certain positon on the list
 
@@ -58,6 +61,7 @@ int		mid_point(t_node *stack, int nbr);
 void	closest_big(t_node **original, int value);
 void	closest_big_to_a(t_node **original, int value);
 int		nbr_rank(t_node **stack, int nth);
+int		ft_sqrt(unsigned int n);
 
 //Sort functions
 void	ft_sort(t_node **stack_a, t_node **stack_b, int size);

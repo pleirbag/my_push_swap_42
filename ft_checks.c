@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:42:46 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/19 21:43:49 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/09/22 22:18:50 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,29 @@ int	ft_strcmp(const char *s1, const char *s2)
 }
 
 // Checks if the string is a valid number, or + - sign
-// int	ft_check_nbr(void)
+int	ft_check_nbr(char *str)
+{
+	int	i;
+	int	b;
+
+	i = 0;
+	b = 0;
+	while (str[b])
+		b++;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if ((str[i] == '-' || str[i] == '+' ))
+	{
+		i++;
+	}
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		i++;
+	}
+	if (i < b)
+		i = 0;
+	return (i);
+}
 
 // checks for repeats in the input
 int	check_rp(char **av)
@@ -34,6 +56,7 @@ int	check_rp(char **av)
 
 	i = 1;
 	c = 1;
+	// printf("av1 == %s\n", av[1]);
 	while (av[i + 1])
 	{
 		while (av[i + c])
@@ -58,7 +81,7 @@ int	checker_errors(char **av)
 	b = 0;
 	while (av[i])
 	{
-		if (((av[i][b] < 48 || av[i][b] > 57) && av[i][b]) || check_rp(av))
+		if ((!ft_check_nbr(av[i]) && av[i][b]) || check_rp(av))
 			return (-1);
 		if (av[i][b])
 			b++;
