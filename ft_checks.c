@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:42:46 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/09/22 22:18:50 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:19:23 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int	check_rp(char **av)
 
 	i = 1;
 	c = 1;
-	// printf("av1 == %s\n", av[1]);
 	while (av[i + 1])
 	{
 		while (av[i + c])

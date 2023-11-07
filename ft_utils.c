@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:42:51 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/18 16:39:53 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:43:24 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,14 @@ long	mini_atoi(char *str)
 }
 
 // debugging function used to print current state of a stack
-void	print_stack(t_node *stack)
-{
-	while (stack)
-	{
-		printf("%d\n", stack->value);
-		stack = stack->next;
-	}
-}
+// void	print_stack(t_node *stack)
+// {
+// 	while (stack)
+// 	{
+// 		printf("%d\n", stack->value);
+// 		stack = stack->next;
+// 	}
+// }
 
 // Runs thru the list returning last node
 t_node	*list_last(t_node *stack)
@@ -89,4 +89,18 @@ int	ft_lstsz(t_node *lst)
 		lst = lst->next;
 	}
 	return (i);
+}
+
+//returns the position of the desire number on the list
+int	mid_point(t_node *stack, int nbr)
+{
+	int	position;
+
+	position = 1;
+	while (stack->value != nbr)
+	{
+		position++;
+		stack = stack->next;
+	}
+	return (position);
 }

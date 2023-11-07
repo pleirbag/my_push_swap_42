@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:51:03 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/20 22:01:12 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:19:26 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ void	ft_top100(t_node **stack_a, t_node **stack_b, int sqrt)
 // Starts the sorting process
 void	ft_sort(t_node **stack_a, t_node **stack_b, int size)
 {
-	// printf("%d\n", nbr_rank(stack_a, 7));
 	if (!ft_is_order(*stack_a))
 		return ;
 	else if (size == 2)

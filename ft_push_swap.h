@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:50:25 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/08/29 22:01:28 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:28:24 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_direction_rotate(t_node **stack, int id, int element, int size);
 
 //Utilities
 void	ft_write_operations(char op, char id);
-void	print_stack(t_node *stack);
+// void	print_stack(t_node *stack);
 t_node	*list_last(t_node *stack);
 long	mini_atoi(char *str);
 int		ft_lstsz(t_node *lst);

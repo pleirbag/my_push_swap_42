@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 18:56:01 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/09/22 22:49:37 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:43:12 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,84 +44,6 @@ int	big_elmnt(t_node **original)
 		stack = stack->next;
 	}
 	return (max);
-}
-
-//returns the position of the desire number on the list
-int	mid_point(t_node *stack, int nbr)
-{
-	int	position;
-
-	position = 1;
-	while (stack->value != nbr)
-	{
-		position++;
-		stack = stack->next;
-	}
-	return (position);
-}
-
-void	closest_big(t_node **original, int value)
-{
-	int		r;
-	int		rr;
-	t_node	*stack;
-
-	r = 0;
-	rr = 0;
-	stack = dupe_list(*original);
-	while (stack->next && stack->value > value)
-	{
-		r++;
-		stack = stack->next;
-	}
-	lst_clear(&stack, 0, 0);
-	stack = dupe_list(*original);
-	while (stack->value > value)
-	{
-		ft_reverse(&stack, 0);
-		rr++;
-	}
-	lst_clear(&stack, 0, 0);
-	if (rr < r)
-	{
-		while (rr--)
-			ft_reverse(original, 'a');
-		return ;
-	}
-	while (r--)
-		ft_rotate(original, 'a');
-}
-
-void	closest_big_to_a(t_node **original, int value)
-{
-	int		r;
-	int		rr;
-	t_node	*stack;
-
-	r = 0;
-	rr = 0;
-	stack = dupe_list(*original);
-	while (stack->next && stack->value < value)
-	{
-		r++;
-		stack = stack->next;
-	}
-	lst_clear(&stack, 0, 0);
-	stack = dupe_list(*original);
-	while (stack->value < value)
-	{
-		ft_reverse(&stack, 0);
-		rr++;
-	}
-	lst_clear(&stack, 0, 0);
-	if (rr < r)
-	{
-		while (rr--)
-			ft_reverse(original, 'b');
-		return ;
-	}
-	while (r--)
-		ft_rotate(original, 'b');
 }
 
 int	smallest_ignore(t_node **original, int ignore)

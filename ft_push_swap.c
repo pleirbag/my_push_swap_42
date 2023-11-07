@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:42:31 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/09/22 22:17:52 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:41:18 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	main(int ac, char **av)
 		}
 		stack_a = lst_mkr(i, inputs, &stack_a);
 		stack_b = NULL;
-		// print_stack(stack_a);
 		ft_sort(&stack_a, &stack_b, i - 1);
 		lst_clear(&stack_a, inputs, ac);
 	}

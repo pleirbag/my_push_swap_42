@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 18:09:46 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/09/22 22:47:55 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:41:33 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,6 @@ t_node	*lst_clear(t_node **stack, char **inputs, int ac)
 		free(*stack);
 		*stack = temp;
 	}
-	// if (ac == 2 && 0)
-	// {
-	// 	free(inputs);
-	// 	inputs++;
-	// 	i++;
-	// }
 	return (*stack);
 }
 

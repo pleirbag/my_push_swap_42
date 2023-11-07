@@ -6,7 +6,7 @@
 /*   By: gabpicci <gabpicci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 20:55:38 by gabpicci          #+#    #+#             */
-/*   Updated: 2023/09/22 22:18:34 by gabpicci         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:42:13 by gabpicci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,35 +51,13 @@ char	*str_mkr(char const *s, char *new_str)
 	return (new_str);
 }
 
-// int	total_size(char **av)
-// {
-// 	int	sz;
-// 	int	cc;
-// 	int	i;
-
-// 	i = -1;
-// 	sz = 0;
-// 	cc = 0;
-// 	while (av[++cc])
-// 	{
-// 		while (av[cc][++i])
-// 		{
-// 			if (!is_wtspc(av[cc][i]) && (is_wtspc(av[cc][i]) || av[cc][i] == 0))
-// 				sz++;
-// 		}
-// 	}
-// 	return (sz);
-// }
-
 char	**ft_split(char const *s)
 {
 	int		i;
 	int		ii;
 	char	**matrix;
-	// int teste;
 
 	i = 0;
-	// teste = -1;
 	ii = 0;
 	matrix = (char **)malloc((nbr_str(s) + 2) * sizeof(char *));
 	matrix[ii++] = 0;
@@ -98,8 +76,6 @@ char	**ft_split(char const *s)
 			i++;
 	}
 	matrix[ii] = NULL;
-	// while (matrix[++teste])
-	// 	printf("%s\n", matrix[teste]);
 	return (matrix);
 }
 
@@ -108,6 +84,8 @@ int	count_inputs(char **inputs)
 	int	i;
 
 	i = 1;
+	if (!inputs)
+		return (0);
 	while (inputs[i])
 		i++;
 	return (i);
